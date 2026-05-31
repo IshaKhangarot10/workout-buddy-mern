@@ -1,51 +1,63 @@
-# 🏋️‍♂️ Workout Buddy
+# 🏋️ Workout Buddy
 
-![MERN Stack](https://img.shields.io/badge/MERN_Stack-5D3FD3?style=for-the-badge&logo=react&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-00008B?style=for-the-badge)
+![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-1A1A5C?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-2E004F?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-001033?style=for-the-badge&logo=mongodb&logoColor=white)
 
-Workout Buddy is a full-stack web application designed to help users track their fitness routines. Users can easily add, view, and delete their daily workouts, including specific exercises, loads, and repetitions. 
-
-This project was built to demonstrate a complete understanding of RESTful API development, database management, and frontend state management.
-
-## Tech Stack
-Frontend:
-* React.js
-* Context API (State Management)
-* CSS 
-Backend:
-* Node.js
-* Express.js
-* MongoDB & Mongoose
+A full-stack MERN (MongoDB, Express, React, Node.js) application designed to help users track their fitness routines, log exercises, and manage their workout data seamlessly.
 
 ## Features
 
-* Create Workouts: Add new exercises with specific sets, reps, and weights.
-* Read Data: View a chronological feed of all past workouts.
-* Delete Workouts: Remove outdated or incorrect entries from the database.
-* Responsive Design: A clean, dark-themed user interface that works across devices.
+* User Authentication: Secure signup, login, and logout functionality using JSON Web Tokens (JWT).
+* Data Privacy: Protected API routes ensure users can only access and manage their own specific workout logs.
+* Workout Management: Easily add, view, update, and delete daily workout routines (load, reps, and exercise titles).
+* State Management: Utilizes React Context for efficient global state handling (AuthContext & WorkoutContext).
 
-## Local Setup Instructions
-To run this project on your own local machine, follow these steps:
+## Tech Stack
 
-Clone the repository:
-   
-   git clone [https://github.com/IshaKhangarot10/workout-buddy-mern.git](https://github.com/IshaKhangarot10/workout-buddy-mern.git)
+### Frontend
+* React.js: UI components and frontend routing.
+* CSS: Custom styling.
 
-Install backend dependencies:
-   cd backend
-   npm install
+### Backend
+* Node.js & Express.js: RESTful API creation and server logic.
+* MongoDB & Mongoose: NoSQL database and object data modeling.
+* Bcrypt & JWT: Password hashing and secure user authentication.
 
-Install frontend dependencies:
-   cd ../frontend
-   npm install
+## Getting Started
 
-Environment Variables:
-   MONGO_URI=your_mongodb_connection_string
-   PORT=4000
+Follow these instructions to set up the project locally on your machine.
 
-Run the application:
-In terminal 1 (Backend): npm run dev
-In terminal 2 (Frontend): npm start
+1. Clone the repository
 
-## Acknowledgments
-This foundational project was built by following the comprehensive MERN Stack tutorial series by The Net Ninja. It served as an excellent practical application of full-stack development principles.
+git clone [https://github.com/IshaKhangarot10/workout-buddy-mern.git](https://github.com/IshaKhangarot10/workout-buddy-mern.git)
+
+2. Install Dependencies
+You will need to install the dependencies for both the frontend and backend.
+
+* For Backend:
+cd Backend
+npm install
+
+* For Frontend:
+cd frontend
+npm install
+
+3. Environment Variables
+Create a .env file in the Backend directory and add the following variables:
+Code snippet
+
+PORT=4000
+MONGO_URI=your_mongodb_connection_string
+SECRET=your_jwt_secret_string
+
+4. Run the Application
+Open two separate terminal windows.
+Start the Backend server:
+cd Backend
+npm run dev
+
+Start the Frontend server:
+cd frontend
+npm start
