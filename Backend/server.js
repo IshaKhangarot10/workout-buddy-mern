@@ -4,7 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const workoutesRoutes = require('./routes/workouts')
-
+const userRoutes = require('./routes/user')
 //express app
 const app = express()
 
@@ -15,6 +15,7 @@ app.use(express.json())
 //     next()
 // })
 app.use('/api/workouts',workoutesRoutes)
+app.use('/api/user',userRoutes)
 
 //route 
 app.get('/', (req, res) => {

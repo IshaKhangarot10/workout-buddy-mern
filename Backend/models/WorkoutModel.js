@@ -11,6 +11,10 @@ const WorkoutSchema = new Schema({
         type: Number,
         required: true
     },
+    user_id:{
+        type: String,
+        required: true
+    },
     load:{
         type: Number,
         required: true

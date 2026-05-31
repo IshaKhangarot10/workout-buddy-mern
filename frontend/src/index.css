@@ -1,8 +1,12 @@
-/* Google Fonts: Fredoka, Nunito, and Material Symbols for the Trash Icon */
+/* =========================================
+   Google Fonts & Icons
+   ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0');
 
-/* Color Palette & Variables */
+/* =========================================
+   Color Palette & Variables
+   ========================================= */
 :root {
   /* Cute Dark & Pastel Palette */
   --bg-dark: #1e1b33; 
@@ -20,41 +24,59 @@
   --glitter-effect: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
 }
 
-/* Base & Reset */
+/* =========================================
+   Base & Reset
+   ========================================= */
+html {
+  background-color: var(--bg-dark); /* Forces the absolute bottom layer to be dark */
+}
+
 body {
   background: var(--bg-gradient);
   background-attachment: fixed;
   margin: 0;
+  padding: 0;
   font-family: 'Nunito', sans-serif;
   color: var(--text-main);
   min-height: 100vh;
 }
 
-/* Glassmorphism Header */
+/* Ensures the React container stretches full height */
+#root {
+  min-height: 100vh;
+}
+
+/* =========================================
+   Header 
+   ========================================= */
 header {
-  background: rgba(30, 27, 51, 0.6);
+  background: rgba(41, 25, 66, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 2px solid rgba(205, 162, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(79, 37, 127, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   position: sticky;
   top: 0;
   z-index: 10;
 }
+
 header .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 17px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+header h1{
+  margin: 0;
+}
 
-/* Colorful Animated Header Text */
+/* Header Text (Slightly Smaller Now) */
 header a {
   text-decoration: none;
   font-family: 'Fredoka', sans-serif;
-  font-size: 2.2em;
+  font-size: 1.8em; /* Decreased from 2.2em */
   font-weight: 600;
   background: linear-gradient(90deg, var(--pastel-pink), var(--pastel-purple), var(--pastel-blue), var(--pastel-green));
   background-size: 200% auto;
@@ -70,12 +92,63 @@ header a {
   }
 }
 
-/* Main Layout */
+/* =========================================
+   Navbar & Authentication Links
+   ========================================= */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Navbar Links (Bigger Now) */
+nav a {
+  /* ... your existing nav a styles ... */
+}
+
+nav a:hover {
+  /* ... your existing nav a:hover styles ... */
+}
+
+/* --- PASTE THE NEW BUTTON CODE HERE --- */
+nav button {
+  background: transparent; 
+  color: var(--pastel-purple); 
+  border: 2px solid var(--pastel-purple); 
+  padding: 8px 16px; 
+  border-radius: 20px; 
+  font-family: 'Fredoka', sans-serif; 
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease; 
+}
+
+nav button:hover {
+  background: var(--pastel-purple);
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px rgba(190, 84, 239, 0.5); 
+  transform: translateY(-2px); 
+}
+
+/* =========================================
+   Main Layout
+   ========================================= */
 .pages {
   max-width: 1400px;
-  padding: 30px 20px;
+  padding: 20px;
   margin: 0 auto;
 }
+
+/* Magically centers the auth forms and prevents scrolling! */
+.pages:has(form.login), .pages:has(form.signup) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px); 
+  padding: 0; 
+}
+
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -83,7 +156,9 @@ header a {
   align-items: start;
 }
 
-/* Cute & Bubbly Glass Cards */
+/* =========================================
+   Cute & Bubbly Glass Cards (Workouts)
+   ========================================= */
 .workout-details {
   background: var(--card-bg);
   backdrop-filter: blur(15px);
@@ -98,14 +173,12 @@ header a {
   overflow: hidden;
 }
 
-/* Card Hover Effects */
 .workout-details:hover {
   transform: translateY(-8px) scale(1.02);
   border-color: var(--pastel-purple);
   box-shadow: 0 15px 40px rgba(205, 162, 255, 0.25), inset 0 0 20px rgba(205, 162, 255, 0.2);
 }
 
-/* Glitter Sweep on Cards */
 .workout-details::before {
   content: "";
   position: absolute;
@@ -117,6 +190,7 @@ header a {
   transform: skewX(-25deg);
   transition: left 0.7s ease;
 }
+
 .workout-details:hover::before {
   left: 200%;
 }
@@ -129,13 +203,14 @@ header a {
   letter-spacing: 0.5px;
   text-shadow: 0 0 10px rgba(162, 210, 255, 0.4);
 }
+
 .workout-details p {
   margin: 0 0 8px 0;
   font-size: 1.05em;
   color: var(--text-muted);
 }
 
-/* --- UPDATED: Trash Can Icon Styling --- */
+/* Trash Can Icon Styling */
 .workout-details span {
   position: absolute;
   top: 25px;
@@ -150,10 +225,8 @@ header a {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* Forces the icon to render */
   font-family: 'Material Symbols Rounded';
-  font-size: 1.2rem; /* Adjusts icon size */
+  font-size: 1.2rem;
   user-select: none;
 }
 
@@ -163,9 +236,10 @@ header a {
   box-shadow: 0 0 15px var(--pastel-pink);
   transform: scale(1.2) rotate(10deg);
 }
-/* --------------------------------------- */
 
-/* New Workout Form */
+/* =========================================
+   General Forms (New Workout)
+   ========================================= */
 form {
   background: var(--card-bg);
   backdrop-filter: blur(15px);
@@ -175,6 +249,13 @@ form {
   border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+
+form h3 {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--text-main);
+  margin-top: 0;
+}
+
 label {
   display: block;
   color: var(--pastel-purple);
@@ -184,6 +265,7 @@ label {
   margin-bottom: 8px;
   letter-spacing: 0.5px;
 }
+
 input {
   display: block;
   padding: 14px 18px;
@@ -198,6 +280,7 @@ input {
   font-size: 1em;
   transition: all 0.3s ease;
 }
+
 input:focus {
   outline: none;
   border-color: var(--pastel-blue);
@@ -224,12 +307,12 @@ form button {
   box-shadow: 0 6px 20px rgba(255, 183, 234, 0.4);
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
 form button:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 10px 25px rgba(205, 162, 255, 0.6);
 }
 
-/* Button Shimmer Effect */
 form button::after {
   content: "";
   position: absolute;
@@ -241,11 +324,62 @@ form button::after {
   transform: rotate(30deg);
   transition: left 0.6s ease;
 }
+
 form button:hover::after {
   left: 120%;
 }
 
-/* Error States */
+/* =========================================
+   Auth Forms (Signup & Login specifically)
+   ========================================= */
+form.signup, form.login {
+  width: 100%;
+  max-width: 420px;
+  /* This margin setup perfectly centers the box and prevents scrolling */
+  margin: 0; 
+  position: relative;
+  
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(240, 170, 220, 0.2);
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(205, 162, 255, 0.15);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+form.signup:hover, form.login:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(205, 162, 255, 0.2), inset 0 0 20px rgba(205, 162, 255, 0.15);
+  border-color: var(--pastel-purple);
+}
+
+form.signup h3, form.login h3 {
+  font-family: 'Fredoka', sans-serif;
+  color: var(--pastel-blue);
+  font-size: 2.2em;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(86, 200, 216, 0.4);
+}
+
+form.signup button, form.login button {
+  margin-top: 5px;
+  background: linear-gradient(45deg, var(--pastel-blue), var(--pastel-green));
+  color: var(--bg-dark);
+  box-shadow: 0 6px 20px rgba(86, 208, 216, 0.4);
+}
+
+form.signup button:hover, form.login button:hover {
+  box-shadow: 0 10px 25px rgba(73, 214, 101, 0.6);
+}
+
+/* =========================================
+   Error States
+   ========================================= */
 div.error {
   padding: 15px;
   background: rgba(255, 158, 170, 0.15);
@@ -257,10 +391,12 @@ div.error {
   font-weight: 700;
   box-shadow: 0 0 15px rgba(255, 158, 170, 0.2);
 }
+
 input.error {
   border-color: var(--error);
   background: rgba(255, 158, 170, 0.1);
 }
+
 input.error:focus {
   box-shadow: 0 0 15px rgba(255, 158, 170, 0.4);
 }
