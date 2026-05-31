@@ -47,17 +47,15 @@ npm install
 3. Environment Variables
 Create a .env file in the Backend directory and add the following variables:
 Code snippet
-
 PORT=4000
 MONGO_URI=your_mongodb_connection_string
 SECRET=your_jwt_secret_string
 
 4. Run the Application
 Open two separate terminal windows.
-Start the Backend server:
+* Start the Backend server:
 cd Backend
 npm run dev
-
-Start the Frontend server:
+* Start the Frontend server:
 cd frontend
 npm start
