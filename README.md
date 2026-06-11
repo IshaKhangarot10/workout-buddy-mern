@@ -16,6 +16,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) application designed to hel
 
 ## Tech Stack
 
+
 ### Frontend
 * React.js: UI components and frontend routing.
 * CSS: Custom styling.
